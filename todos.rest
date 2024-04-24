@@ -1,0 +1,35 @@
+# Instalar extensão REST Client no Visual Studio Code para funcionar
+
+@baseUrl = http://localhost:8080
+
+## List Todos
+GET {{baseUrl}}/api/todos
+
+### Criar TODO
+POST {{baseUrl}}/api/todos  HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Learn Node.js",
+  "description": "Learn Node.js by building a RESTful API"
+}
+
+### Atualizar TODO
+PATCH {{baseUrl}}/api/todos/02768f30-1ecb-4a1d-955c-410101b69494 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Teste"
+}
+
+### Completar TODO
+PATCH {{baseUrl}}/api/todos/02768f30-1ecb-4a1d-955c-410101b69494/complete HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+### Deletar TODO
+DELETE {{baseUrl}}/api/todos/02768f30-1ecb-4a1d-955c-410101b69494 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
