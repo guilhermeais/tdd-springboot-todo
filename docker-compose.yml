@@ -18,3 +18,14 @@ services:
       timeout: 5s
       retries: 20
       start_period: 10s
+
+  todoapp:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/todoapp
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
